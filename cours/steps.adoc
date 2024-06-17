@@ -1,0 +1,97 @@
+= Etapes de création d'une application
+== La création du dossier de l'application
+
+Il faut tout d'abord créer en quelque part le dossier représentant l'application.
+
+[source, bash]
+----
+cd ./Desktop && mkdir app
+----
+=== 
+
+Il faut ensuite initialiser le package.json car c'est le fichier qui va référencer les dépendances nécessaires à l'application. Il peut s'agit de dépendances de développement ou de dépendances
+
+[source, bash]
+----
+npm init #permet d'initialiser le package.json
+----
+
+== L'architecture logiciel 
+
+Il faut ensuite créer la structure du logiciel applicatif
+Autrement dit se demander comment les fichiers vont être organisés entre eux.
+
+[source, bash]
+----
+
+mkdir assets src #vous pouvez mettre public à la place de assets et y mettre un dossiers assets voire un dossier css
+
+----
+=== 
+
+Ensuite, vous pouvez créer, à l'intérieur du dossier src, trois dossiers : deux dossiers UI (user interface) à savoir components et pages et un dossier métier (container)
+
+[source, bash]
+----
+
+cd src && mkdir containers components pages
+
+----
+===
+
+A l'intérieur du dossier components vous allez créer des fonctions réutilisables et à contenu dynamique.
+
+[source, javascript]
+----
+// Exemple  input.js
+
+const inputComponent = (data) => {
+    // ici data est un objet qui contient trois propriétés
+    /*
+        type 
+        placeholder
+        id
+    
+     */
+    return(
+        `
+            <input type="${data.type}" placeholder="${data.placeholder}" id="${data.id}" />
+        
+        `
+    )
+
+}
+
+export default inputComponent
+
+----
+===
+
+Maintenant que j'ai créé inputComponent.js je vais pouvoir grâce à l'export default l'importer ailleurs.
+
+[source, javascript]
+----
+// login.js
+import inputComponent from "../components/inputComponent.js"
+
+function loginPage(data){
+    return(
+        `
+            <main class="main login__main">
+
+                ${data}
+
+            </main>
+        
+        `
+    )
+}
+
+document.getElementById('container').innerHTML += loginPage(inputComponent())
+
+----
+
+=== 
+
+Ci-dessus je vais en sorte que le contenu HTML de la balise ayant comme identifiant container soit compléter par le contenu de loginPage interprêté grâce à innerHTML en js.
+
