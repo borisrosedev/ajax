@@ -1,0 +1,19 @@
+= Commandes git
+
+[source,bash]
+----
+
+git init #la commande qui permet d'initialiser un dépôt local git 
+
+git status #la commande qui permet de visualiser l'état du dépôt local à un moment donné afin de voir les fichiers et les dossiers qui sont indexés, prêts à être commit
+
+git add . #permet d'indexer tous les modifications non mises à jour 
+
+git commit -m'feat/modif' #manière de sauvegarder/commit les modifications indexées
+
+git push origin master #envoie sur le dépôt distant sur la branche master le commit
+
+git log #permet de visualiser la liste des commits réalisés sur le dépôt
+
+
+----

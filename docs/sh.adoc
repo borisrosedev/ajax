@@ -1,0 +1,30 @@
+= Commandes git
+
+[source,bash]
+----
+
+pwd #permet de connaître le chemin absolu vers le dossier courant 
+
+cd Desktop #permet de changer de dossier en l'occurrence d'aller vers le dossier Desktop
+
+cd #permet d'atteindre le dossier personnel de l'utilisateur
+
+cd .. #permet de remonter dans le dossier parent du dossier courant
+
+ls Desktop #permet de lister les fichiers et dossiers et liens présents dans un dossier en l'occurrence Desktop
+
+ls -a Desktop #permet de faire la liste des fichiers et dossiers et liens présents dans un dossier en l'occurence Desktop mais aussi tous les éléments cachés. 
+
+ls -G Desktop #permet de voir la liste des fichiers et dossiers dans Desktop en visualisant leur type
+
+mkdir app #permet de créer un dossier en l'occurrence un dossier app
+
+mkdir -p app/src  #permet de créer un dossier et de créer un arborescence interne 
+
+touch file.js #permet de créer un fichier file.js 
+
+chmod +x file.sh #permet de changer les droits en ajoutant le droit d'exécution d'un fichier à tous les types d'utilisateur 
+
+
+
+----

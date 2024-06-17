@@ -4,3 +4,5 @@ const article = function (data) {
         
         `;
 };
+
+// l'idée c'est de créer des composants élémentaires et réutilisables
