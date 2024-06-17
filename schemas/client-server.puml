@@ -1,0 +1,17 @@
+@startuml
+
+participant "Client Navigateur" as CN
+
+participant "Serveur d'application" as SA
+
+participant "Serveur de base de données" as SBDD
+
+
+CN --> SA : Requête HTTP
+SA --> SBDD : Requête SQL
+SA <-- SBDD : Réponse SQL
+CN <-- SA : Response HTTP
+
+
+
+@enduml
